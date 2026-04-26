@@ -10,5 +10,11 @@
     "price": 77150,
     "direction": "below",
     "active": true
+  },
+  {
+    "coin": "ETH",
+    "price": 3000,
+    "direction": "above",
+    "active": true
   }
 ]
