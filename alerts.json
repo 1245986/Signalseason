@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "coin": "BNB",
+    "price": 625,
+    "direction": "below",
+    "active": true
+  }
+]
