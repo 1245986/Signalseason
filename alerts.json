@@ -21,6 +21,6 @@
     "coin": "BNB",
     "price": 624,
     "direction": "below",
-    "active": true
+    "active": false
   }
 ]
