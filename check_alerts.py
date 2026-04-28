@@ -18,14 +18,14 @@ def get_prices(coins):
     ids = [CG_IDS[c] for c in coins if c in CG_IDS]
     if not ids: return {}
     r = requests.get('https://api.coingecko.com/api/v3/simple/price',
-                       params={'ids':','.join(ids),'vs_currencies':'usd'},timeout=10)
+                     params={'ids':','.join(ids),'vs_currencies':'usd'},timeout=10)
     r.raise_for_status()
     data = r.json()
     return {c: data[CG_IDS[c]]['usd'] for c in coins if c in CG_IDS and CG_IDS[c] in data}
 
 def send_telegram(text):
     requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
-                    json={'chat_id':TG_CHAT,'text':text,'parse_mode':'HTML'},timeout=10)
+                  json={'chat_id':TG_CHAT,'text':text,'parse_mode':'HTML'},timeout=10)
 
 def main():
     with open('alerts.json','r') as f:
@@ -49,9 +49,11 @@ def main():
         if triggered:
             icon = '\U0001f7e2' if direction=='above' else '\U0001f534'
             arrow = '▲' if direction=='above' else '▼'
-            msg = (f"{icon} <b>PREIS ALERT</b> - <b>{coin}</b>\n"
-                   f"Ziel {arrow} ${target:,.0f} erreicht!\n"
-                   f"Preis: <b>${price:,.2f}</b>\n<code>{now} UTC</code>")
+            msg = (
+                f"{icon} <b>PREIS ALERT</b> - <b>{coin}</b>\n"
+                f"Ziel {arrow} ${target:,.0f} erreicht!\n"
+                f"Preis: <b>${price:,.2f}</b>\n<code>{now} UTC</code>"
+            )
             send_telegram(msg)
             alert['active'] = False
             changed = True
