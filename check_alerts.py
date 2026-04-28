@@ -49,7 +49,7 @@ def main():
         if triggered:
             icon = '\U0001f7e2' if direction=='above' else '\U0001f534'
             arrow = '▲' if direction=='above' else '▼'
-            msg = f"{icon} <b>PREIS ALERT</b> — <b>{coin}</b>\nZiel {arrow} ${target:,.0f} erreicht!\nPreis:
+            msg = f"{icon} <b>PREIS ALERT</b> - <b>{coin}</b>\nZiel {arrow} ${target:,.0f} erreicht!\nPreis:
 <b>${price:,.2f}</b>\n<code>{now} UTC</code>"
             send_telegram(msg)
             alert['active'] = False
