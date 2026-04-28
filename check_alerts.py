@@ -7,9 +7,9 @@ TG_TOKEN = os.environ['TG_TOKEN']
 TG_CHAT = os.environ['TG_CHAT']
 
 def get_mark_price(coin):
-    r = requests.get(f"https://fapi.binance.com/fapi/v1/premiumIndex?symbol={coin}USDT", timeout=10)
-    r.raise_for_status()
-    return float(r.json()['markPrice'])
+      r = requests.get(f"https://api.binance.com/api/v3/ticker/price?symbol={coin}USDT", timeout=10)
+      r.raise_for_status()
+      return float(r.json()['price'])
 
 def send_telegram(text):
     requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage", json={'chat_id': TG_CHAT, 'text': text, 'parse_mode': 'HTML'}, timeout=10)
