@@ -16,5 +16,11 @@
     "price": 625,
     "direction": "above",
     "active": true
+  },
+  {
+    "coin": "BNB",
+    "price": 624,
+    "direction": "below",
+    "active": true
   }
 ]
