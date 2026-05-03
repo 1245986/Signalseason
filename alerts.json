@@ -40,5 +40,11 @@
     "price": 76500,
     "direction": "above",
     "active": false
+  },
+  {
+    "coin": "BTC",
+    "price": 79065,
+    "direction": "above",
+    "active": true
   }
 ]
