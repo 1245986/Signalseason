@@ -51,7 +51,7 @@
     "coin": "ETH",
     "price": 2345,
     "direction": "above",
-    "active": true
+    "active": false
   },
   {
     "coin": "BTC",
