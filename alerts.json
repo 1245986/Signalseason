@@ -87,6 +87,6 @@
     "coin": "SOL",
     "price": 85.8,
     "direction": "above",
-    "active": true
+    "active": false
   }
 ]
