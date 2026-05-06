@@ -97,10 +97,11 @@
       "timestamp": "06.05.2026, 09:19",
       "tpsHit": [
         "tp1",
-        "tp2"
+        "tp2",
+        "tp3"
       ],
       "slHit": false,
-      "active": true
+      "active": false
     }
   ]
 }
