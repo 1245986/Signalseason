@@ -85,5 +85,19 @@
       "active": false
     }
   ],
-  "trades": []
+  "trades": [
+    {
+      "coin": "BTC",
+      "direction": "long",
+      "entry": 81463,
+      "sl": 80982,
+      "tp1": null,
+      "tp2": null,
+      "tp3": null,
+      "timestamp": "06.05.2026, 09:19",
+      "tpsHit": [],
+      "slHit": false,
+      "active": true
+    }
+  ]
 }
