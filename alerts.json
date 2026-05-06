@@ -1,20 +1,89 @@
 {
   "alerts": [
-    { "coin": "BTC", "price": 77150, "direction": "below", "active": false },
-    { "coin": "BNB", "price": 625, "direction": "above", "active": false },
-    { "coin": "BNB", "price": 625, "direction": "above", "active": false },
-    { "coin": "BNB", "price": 624, "direction": "below", "active": false },
-    { "coin": "BTC", "price": 76720, "direction": "below", "active": false },
-    { "coin": "BTC", "price": 75600, "direction": "below", "active": false },
-    { "coin": "BTC", "price": 76500, "direction": "above", "active": false },
-    { "coin": "BTC", "price": 79065, "direction": "above", "active": false },
-    { "coin": "ETH", "price": 2345, "direction": "above", "active": false },
-    { "coin": "BTC", "price": 78430, "direction": "below", "active": false },
-    { "coin": "BTC", "price": 81450, "direction": "above", "active": false },
-    { "coin": "BTC", "price": 81650, "direction": "above", "active": false },
-    { "coin": "BTC", "price": 82050, "direction": "above", "active": true },
-    { "coin": "BTC", "price": 80700, "direction": "below", "active": true },
-    { "coin": "SOL", "price": 85.8, "direction": "above", "active": false }
+    {
+      "coin": "BTC",
+      "price": 77150,
+      "direction": "below",
+      "active": false
+    },
+    {
+      "coin": "BNB",
+      "price": 625,
+      "direction": "above",
+      "active": false
+    },
+    {
+      "coin": "BNB",
+      "price": 624,
+      "direction": "below",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 76720,
+      "direction": "below",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 75600,
+      "direction": "below",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 76500,
+      "direction": "above",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 79065,
+      "direction": "above",
+      "active": false
+    },
+    {
+      "coin": "ETH",
+      "price": 2345,
+      "direction": "above",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 78430,
+      "direction": "below",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 81450,
+      "direction": "above",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 81650,
+      "direction": "above",
+      "active": false
+    },
+    {
+      "coin": "BTC",
+      "price": 82050,
+      "direction": "above",
+      "active": true
+    },
+    {
+      "coin": "BTC",
+      "price": 80700,
+      "direction": "below",
+      "active": true
+    },
+    {
+      "coin": "SOL",
+      "price": 85.8,
+      "direction": "above",
+      "active": false
+    }
   ],
   "trades": []
 }
