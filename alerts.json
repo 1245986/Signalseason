@@ -76,7 +76,7 @@
       "coin": "BTC",
       "price": 80700,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "SOL",
