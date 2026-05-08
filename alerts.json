@@ -106,7 +106,7 @@
       "coin": "BNB",
       "price": 643,
       "direction": "above",
-      "active": true
+      "active": false
     },
     {
       "coin": "ETH",
