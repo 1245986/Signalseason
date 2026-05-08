@@ -161,6 +161,12 @@
       "price": 1.02,
       "direction": "above",
       "active": true
+    },
+    {
+      "coin": "HYPE",
+      "price": 43.15,
+      "direction": "above",
+      "active": true
     }
   ],
   "trades": [
