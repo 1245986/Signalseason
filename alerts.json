@@ -149,6 +149,12 @@
       "price": 0.37,
       "direction": "above",
       "active": true
+    },
+    {
+      "coin": "KAS",
+      "price": 0.349,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
