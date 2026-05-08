@@ -154,7 +154,7 @@
       "coin": "KAS",
       "price": 0.349,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "VIRTUAL",
