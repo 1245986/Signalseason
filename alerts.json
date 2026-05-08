@@ -94,7 +94,7 @@
       "coin": "ALGO",
       "price": 0.136,
       "direction": "above",
-      "active": true
+      "active": false
     },
     {
       "coin": "ALGO",
