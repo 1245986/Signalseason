@@ -95,6 +95,12 @@
       "price": 0.136,
       "direction": "above",
       "active": true
+    },
+    {
+      "coin": "ALGO",
+      "price": 0.12,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
