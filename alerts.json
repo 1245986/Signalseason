@@ -155,6 +155,12 @@
       "price": 0.349,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "VIRTUAL",
+      "price": 1.02,
+      "direction": "above",
+      "active": true
     }
   ],
   "trades": [
