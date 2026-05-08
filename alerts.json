@@ -131,6 +131,12 @@
       "price": 1.66,
       "direction": "above",
       "active": true
+    },
+    {
+      "coin": "NEAR",
+      "price": 1.45,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
