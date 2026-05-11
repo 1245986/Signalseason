@@ -206,6 +206,20 @@
       "slHit": false,
       "active": true,
       "paper": true
+    },
+    {
+      "coin": "BNB",
+      "direction": "long",
+      "entry": 660.5,
+      "sl": 651.5,
+      "tp1": 678.5607745289511,
+      "tp2": 687.5843660386015,
+      "tp3": 705.6315490579022,
+      "timestamp": "11.05.2026, 18:08",
+      "tpsHit": [],
+      "slHit": false,
+      "active": true,
+      "paper": true
     }
   ]
 }
