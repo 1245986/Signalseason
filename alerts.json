@@ -192,6 +192,20 @@
       ],
       "slHit": false,
       "active": false
+    },
+    {
+      "coin": "ETH",
+      "direction": "short",
+      "entry": 2332,
+      "sl": 2354,
+      "tp1": 2302.607542626915,
+      "tp2": 2285.5489955565804,
+      "tp3": 2251.4319014159114,
+      "timestamp": "11.05.2026, 18:07",
+      "tpsHit": [],
+      "slHit": false,
+      "active": true,
+      "paper": true
     }
   ]
 }
