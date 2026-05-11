@@ -127,12 +127,6 @@
       "active": true
     },
     {
-      "coin": "TAO",
-      "price": 284,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "KAS",
       "price": 0.37,
       "direction": "above",
