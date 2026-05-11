@@ -172,7 +172,7 @@
       "coin": "BTC",
       "price": 82000,
       "direction": "above",
-      "active": true
+      "active": false
     }
   ],
   "trades": [
