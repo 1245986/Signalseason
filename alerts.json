@@ -109,12 +109,6 @@
       "active": true
     },
     {
-      "coin": "SUI",
-      "price": 0.963,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "DOGE",
       "price": 0.1036,
       "direction": "below",
