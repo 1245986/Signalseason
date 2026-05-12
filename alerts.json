@@ -237,6 +237,20 @@
       "slHit": true,
       "active": false,
       "paper": true
+    },
+    {
+      "coin": "NEAR",
+      "direction": "long",
+      "entry": 1.55,
+      "sl": 1.51,
+      "tp1": 1.613957537660104,
+      "tp2": 1.647076130608735,
+      "tp3": 1.7133133165059966,
+      "timestamp": "12.05.2026, 18:06",
+      "tpsHit": [],
+      "slHit": false,
+      "active": true,
+      "paper": false
     }
   ]
 }
