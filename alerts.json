@@ -220,8 +220,8 @@
       "tp3": 705.6315490579022,
       "timestamp": "11.05.2026, 18:08",
       "tpsHit": [],
-      "slHit": false,
-      "active": true,
+      "slHit": true,
+      "active": false,
       "paper": true
     },
     {
