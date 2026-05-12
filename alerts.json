@@ -247,7 +247,9 @@
       "tp2": 1.647076130608735,
       "tp3": 1.7133133165059966,
       "timestamp": "12.05.2026, 18:06",
-      "tpsHit": [],
+      "tpsHit": [
+        "tp1"
+      ],
       "slHit": false,
       "active": true,
       "paper": false
