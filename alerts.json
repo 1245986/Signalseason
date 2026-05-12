@@ -233,8 +233,8 @@
       "tp3": 357.23215545896323,
       "timestamp": "11.05.2026, 18:08",
       "tpsHit": [],
-      "slHit": false,
-      "active": true,
+      "slHit": true,
+      "active": false,
       "paper": true
     }
   ]
