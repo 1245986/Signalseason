@@ -203,7 +203,8 @@
       "tp3": 2251.4319014159114,
       "timestamp": "11.05.2026, 18:07",
       "tpsHit": [
-        "tp1"
+        "tp1",
+        "tp2"
       ],
       "slHit": false,
       "active": true,
