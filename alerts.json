@@ -121,12 +121,6 @@
       "active": false
     },
     {
-      "coin": "NEAR",
-      "price": 1.45,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "KAS",
       "price": 0.349,
       "direction": "below",
