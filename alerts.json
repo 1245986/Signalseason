@@ -148,7 +148,7 @@
       "coin": "LINK",
       "price": 10.097,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "SUI",
