@@ -94,7 +94,7 @@
       "coin": "ALGO",
       "price": 0.12,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "BNB",
