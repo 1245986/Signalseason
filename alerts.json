@@ -160,7 +160,7 @@
       "coin": "TAO",
       "price": 292,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "BTC",
