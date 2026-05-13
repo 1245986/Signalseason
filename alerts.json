@@ -266,7 +266,7 @@
       "timestamp": "13.05.2026, 16:34",
       "tpsHit": [],
       "slHit": false,
-      "active": true,
+      "active": false,
       "paper": true
     }
   ]
