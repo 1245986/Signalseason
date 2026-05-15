@@ -179,6 +179,12 @@
       "price": 0.3611,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "SUI",
+      "price": 1.12,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
