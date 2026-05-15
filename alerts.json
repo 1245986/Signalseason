@@ -179,6 +179,12 @@
       "price": 1.12,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "ETH",
+      "price": 2175,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
