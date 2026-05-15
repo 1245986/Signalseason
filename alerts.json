@@ -160,7 +160,7 @@
       "coin": "ONDO",
       "price": 0.3611,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "SUI",
