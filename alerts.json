@@ -154,7 +154,7 @@
       "coin": "SUI",
       "price": 1.15,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "TAO",
