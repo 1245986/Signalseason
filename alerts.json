@@ -166,7 +166,7 @@
       "coin": "SUI",
       "price": 1.12,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "ETH",
