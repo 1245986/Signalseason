@@ -103,12 +103,6 @@
       "active": false
     },
     {
-      "coin": "ETH",
-      "price": 2225,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "DOGE",
       "price": 0.1036,
       "direction": "below",
