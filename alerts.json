@@ -185,6 +185,12 @@
       "price": 2175,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "XRP",
+      "price": 1.4525,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
