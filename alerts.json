@@ -172,7 +172,7 @@
       "coin": "ETH",
       "price": 2175,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "XRP",
