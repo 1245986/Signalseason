@@ -190,7 +190,7 @@
       "coin": "DOGE",
       "price": 0.105,
       "direction": "below",
-      "active": true
+      "active": false
     }
   ],
   "trades": [
