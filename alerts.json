@@ -115,12 +115,6 @@
       "active": false
     },
     {
-      "coin": "VIRTUAL",
-      "price": 1.02,
-      "direction": "above",
-      "active": true
-    },
-    {
       "coin": "BTC",
       "price": 79125,
       "direction": "below",
