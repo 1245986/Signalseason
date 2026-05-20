@@ -191,6 +191,12 @@
       "price": 0.105,
       "direction": "below",
       "active": false
+    },
+    {
+      "coin": "SOL",
+      "price": 85.2,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
