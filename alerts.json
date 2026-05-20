@@ -121,12 +121,6 @@
       "active": true
     },
     {
-      "coin": "HYPE",
-      "price": 43.15,
-      "direction": "above",
-      "active": true
-    },
-    {
       "coin": "BTC",
       "price": 79125,
       "direction": "below",
