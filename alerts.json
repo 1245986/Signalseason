@@ -203,6 +203,12 @@
       "price": 86,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "LINK",
+      "price": 10.1,
+      "direction": "above",
+      "active": true
     }
   ],
   "trades": [
