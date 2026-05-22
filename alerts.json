@@ -175,12 +175,6 @@
       "active": false
     },
     {
-      "coin": "TAO",
-      "price": 265,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "ONDO",
       "price": 0.397,
       "direction": "below",
