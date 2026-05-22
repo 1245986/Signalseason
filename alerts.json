@@ -190,7 +190,7 @@
       "coin": "SOL",
       "price": 86,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "LINK",
