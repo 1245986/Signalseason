@@ -197,6 +197,12 @@
       "price": 0.397,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "BNB",
+      "price": 647,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
