@@ -181,12 +181,6 @@
       "active": false
     },
     {
-      "coin": "SOL",
-      "price": 85.2,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "TAO",
       "price": 265,
       "direction": "below",
