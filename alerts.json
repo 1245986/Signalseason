@@ -169,12 +169,6 @@
       "active": false
     },
     {
-      "coin": "NEAR",
-      "price": 1.43,
-      "direction": "below",
-      "active": true
-    },
-    {
       "coin": "DOGE",
       "price": 0.105,
       "direction": "below",
