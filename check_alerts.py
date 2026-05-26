@@ -3,10 +3,10 @@ import os
 import time
 import requests
 from datetime import datetime, timezone
-
+ 
 TG_TOKEN = os.environ['TG_TOKEN']
 TG_CHAT  = os.environ['TG_CHAT']
-
+ 
 CG_IDS = {
     'BTC':'bitcoin','ETH':'ethereum','BNB':'binancecoin',
     'SOL':'solana','XRP':'ripple','SUI':'sui','TAO':'bittensor',
@@ -14,38 +14,88 @@ CG_IDS = {
     'LINK':'chainlink','ARB':'arbitrum','OP':'optimism',
     'TON':'the-open-network','PEPE':'pepe','WIF':'dogwifcoin',
 }
-
+ 
 def get_prices(coins, retries=3, delay=5):
-    ids = [CG_IDS[c] for c in coins if c in CG_IDS]
-    if not ids: return {}
+    result = {}
+ 
     for attempt in range(retries):
         try:
             r = requests.get(
-                'https://api.coingecko.com/api/v3/simple/price',
-                params={'ids': ','.join(ids), 'vs_currencies': 'usd'},
+                'https://api.bybit.com/v5/market/tickers?category=linear',
                 timeout=10
             )
             r.raise_for_status()
-            data = r.json()
-            return {c: data[CG_IDS[c]]['usd'] for c in coins if c in CG_IDS and CG_IDS[c] in data}
+            price_map = {
+                item['symbol']: float(item['lastPrice'])
+                for item in r.json().get('result', {}).get('list', [])
+            }
+            for c in coins:
+                if c.upper() + 'USDT' in price_map:
+                    result[c] = price_map[c.upper() + 'USDT']
+            break
         except Exception as e:
-            print(f"CoinGecko Fehler (Versuch {attempt+1}/{retries}): {e}")
+            print(f"Bybit Fehler (Versuch {attempt+1}/{retries}): {e}")
             if attempt < retries - 1:
                 time.sleep(delay)
-    return {}
-
+ 
+    missing = [c for c in coins if c not in result]
+    if missing:
+        ids = [CG_IDS[c] for c in missing if c in CG_IDS]
+        if ids:
+            for attempt in range(retries):
+                try:
+                    r = requests.get(
+                        'https://api.coingecko.com/api/v3/simple/price',
+                        params={'ids': ','.join(ids), 'vs_currencies': 'usd'},
+                        timeout=10
+                    )
+                    r.raise_for_status()
+                    data = r.json()
+                    for c in missing:
+                        if c in CG_IDS and CG_IDS[c] in data:
+                            result[c] = data[CG_IDS[c]]['usd']
+                    break
+                except Exception as e:
+                    print(f"CoinGecko Fallback Fehler (Versuch {attempt+1}/{retries}): {e}")
+                    if attempt < retries - 1:
+                        time.sleep(delay)
+    return result
+ 
+def get_candle_extremes(coins):
+    extremes = {}
+    for c in coins:
+        sym = c.upper() + 'USDT'
+        try:
+            r = requests.get(
+                'https://api.bybit.com/v5/market/kline',
+                params={'category': 'linear', 'symbol': sym, 'interval': '1', 'limit': '3'},
+                timeout=8
+            )
+            r.raise_for_status()
+            candles = r.json().get('result', {}).get('list', [])
+            lows  = [float(k[3]) for k in candles]
+            highs = [float(k[2]) for k in candles]
+            extremes[c] = {
+                'low':  min(lows)  if lows  else None,
+                'high': max(highs) if highs else None,
+            }
+        except Exception as e:
+            print(f"Kerzen-Fehler {c}: {e}")
+            extremes[c] = {'low': None, 'high': None}
+    return extremes
+ 
 def send_telegram(text):
     requests.post(
         f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
         json={'chat_id': TG_CHAT, 'text': text, 'parse_mode': 'HTML'},
         timeout=10
     )
-
+ 
 def fmt(price):
     if price >= 100: return f"${price:,.2f}"
     if price >= 1:   return f"${price:.4f}"
     return f"${price:.6f}"
-
+ 
 def dedup_alerts(alerts):
     seen, result, removed = set(), [], 0
     for a in alerts:
@@ -57,7 +107,7 @@ def dedup_alerts(alerts):
             print(f"Duplikat entfernt: {a['coin']} {a['direction']} {a['price']}")
             removed += 1
     return result, removed > 0
-
+ 
 def check_alerts(alerts, prices, now):
     changed = False
     for alert in alerts:
@@ -80,35 +130,51 @@ def check_alerts(alerts, prices, now):
             changed = True
             print(f"Alert: {coin} {direction} {fmt(target)}")
     return changed
-
-def check_trades(trades, prices, now):
+ 
+def check_trades(trades, prices, extremes, now):
     changed = False
     for trade in trades:
         if not trade.get('active', True): continue
-        coin, price = trade['coin'], prices.get(trade['coin'])
+        coin  = trade['coin']
+        price = prices.get(coin)
         if price is None: print(f"Kein Preis (Trade): {coin}"); continue
-
+ 
         is_long   = trade['direction'] == 'long'
         dir_label = 'LONG' if is_long else 'SHORT'
         sl        = trade.get('sl')
         tps_hit   = trade.setdefault('tpsHit', [])
-
-        if sl is not None and ((is_long and price <= sl) or (not is_long and price >= sl)):
+        ex        = extremes.get(coin, {})
+ 
+        check_low  = min(price, ex['low'])  if ex.get('low')  is not None else price
+        check_high = max(price, ex['high']) if ex.get('high') is not None else price
+ 
+        sl_triggered = sl is not None and (
+            (is_long     and check_low  <= sl) or
+            (not is_long and check_high >= sl)
+        )
+ 
+        if sl_triggered:
+            wick_info = fmt(check_low) if is_long else fmt(check_high)
             send_telegram(
                 f"🛑 <b>STOP LOSS</b> - <b>{coin}</b> {dir_label}\n"
                 f"SL {fmt(sl)} wurde getroffen\n"
-                f"Preis: <b>{fmt(price)}</b>\n<code>{now} UTC</code>"
+                f"Preis: <b>{fmt(price)}</b> · Wick: {wick_info}\n"
+                f"<code>{now} UTC</code>"
             )
             trade['slHit'] = True
             trade['active'] = False
             changed = True
             print(f"SL: {coin} {dir_label} @ {fmt(price)}")
             continue
-
+ 
         for tp_key in ['tp1', 'tp2', 'tp3']:
             tp_val = trade.get(tp_key)
             if tp_val is None or tp_key in tps_hit: continue
-            if (is_long and price >= tp_val) or (not is_long and price <= tp_val):
+            tp_triggered = (
+                (is_long     and check_high >= tp_val) or
+                (not is_long and check_low  <= tp_val)
+            )
+            if tp_triggered:
                 send_telegram(
                     f"🎯 <b>{tp_key.upper()} ERREICHT</b> - <b>{coin}</b> {dir_label}\n"
                     f"{tp_key.upper()} {fmt(tp_val)} getroffen!\n"
@@ -117,26 +183,26 @@ def check_trades(trades, prices, now):
                 tps_hit.append(tp_key)
                 changed = True
                 print(f"{tp_key.upper()}: {coin} {dir_label} @ {fmt(price)}")
-
+ 
         defined_tps = [k for k in ['tp1', 'tp2', 'tp3'] if trade.get(k) is not None]
         if defined_tps and all(t in tps_hit for t in defined_tps):
             trade['active'] = False
             changed = True
             print(f"Alle TPs: {coin} Trade geschlossen")
-
+ 
     return changed
-
+ 
 def main():
     with open('alerts.json', 'r') as f:
         data = json.load(f)
-
+ 
     if isinstance(data, list):
         data = {'alerts': data, 'trades': []}
-
+ 
     data['alerts'], dedup_changed = dedup_alerts(data.setdefault('alerts', []))
     trades = data.setdefault('trades', [])
     alerts = data['alerts']
-
+ 
     active_alerts = [a for a in alerts if a.get('active', True)]
     active_trades = [t for t in trades if t.get('active', True)]
     if not active_alerts and not active_trades:
@@ -144,23 +210,26 @@ def main():
             with open('alerts.json', 'w') as f:
                 json.dump(data, f, indent=2)
         return
-
+ 
     coins = {a['coin'] for a in active_alerts} | {t['coin'] for t in active_trades}
     prices = get_prices(list(coins))
     if not prices:
         print("Preise konnten nicht abgerufen werden."); return
-
+ 
     for coin, price in prices.items():
         print(f"{coin}: {fmt(price)}")
-
+ 
+    active_trade_coins = list({t['coin'] for t in active_trades})
+    extremes = get_candle_extremes(active_trade_coins) if active_trade_coins else {}
+ 
     now = datetime.now(timezone.utc).strftime('%d.%m.%Y %H:%M')
     changed  = dedup_changed
     changed |= check_alerts(alerts, prices, now)
-    changed |= check_trades(trades, prices, now)
-
+    changed |= check_trades(trades, prices, extremes, now)
+ 
     if changed:
         with open('alerts.json', 'w') as f:
             json.dump(data, f, indent=2)
-
+ 
 if __name__ == '__main__':
     main()
