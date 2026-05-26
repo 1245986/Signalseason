@@ -245,6 +245,12 @@
       "price": 0.45,
       "direction": "above",
       "active": true
+    },
+    {
+      "coin": "ONDO",
+      "price": 0.3735,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
