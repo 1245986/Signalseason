@@ -347,6 +347,20 @@
       "slHit": false,
       "active": false,
       "paper": true
+    },
+    {
+      "coin": "TAO",
+      "direction": "long",
+      "entry": 283.35,
+      "sl": 279,
+      "tp1": 293.28695131321643,
+      "tp2": 299.165209206483,
+      "tp3": 310.9217249930161,
+      "timestamp": "26.05.2026, 17:04",
+      "tpsHit": [],
+      "slHit": false,
+      "active": true,
+      "paper": false
     }
   ]
 }
