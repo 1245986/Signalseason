@@ -215,6 +215,12 @@
       "price": 75800,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "BTC",
+      "price": 77600,
+      "direction": "above",
+      "active": true
     }
   ],
   "trades": [
