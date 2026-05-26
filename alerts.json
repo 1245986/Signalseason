@@ -203,6 +203,12 @@
       "price": 1.7,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "TAO",
+      "price": 280,
+      "direction": "below",
+      "active": true
     }
   ],
   "trades": [
