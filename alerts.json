@@ -251,6 +251,12 @@
       "price": 0.3735,
       "direction": "below",
       "active": true
+    },
+    {
+      "coin": "FET",
+      "price": 0.2688,
+      "direction": "above",
+      "active": true
     }
   ],
   "trades": [
