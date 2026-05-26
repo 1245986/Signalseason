@@ -358,8 +358,8 @@
       "tp3": 310.9217249930161,
       "timestamp": "26.05.2026, 17:04",
       "tpsHit": [],
-      "slHit": false,
-      "active": true,
+      "slHit": true,
+      "active": false,
       "paper": false
     }
   ]
