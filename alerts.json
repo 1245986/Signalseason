@@ -214,7 +214,7 @@
       "coin": "BNB",
       "price": 656,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "SOL",
