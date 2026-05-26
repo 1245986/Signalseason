@@ -190,7 +190,7 @@
       "coin": "BTC",
       "price": 75800,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "BTC",
