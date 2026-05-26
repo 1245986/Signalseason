@@ -68,10 +68,13 @@ def check_alerts(alerts, prices, now):
         if (direction == 'above' and price >= target) or (direction == 'below' and price <= target):
             icon  = '\U0001f7e2' if direction == 'above' else '\U0001f534'
             arrow = '▲' if direction == 'above' else '▼'
+            comment = alert.get('comment', '')
             send_telegram(
                 f"{icon} <b>PREIS ALERT</b> - <b>{coin}</b>\n"
                 f"Ziel {arrow} {fmt(target)} erreicht!\n"
-                f"Preis: <b>{fmt(price)}</b>\n<code>{now} UTC</code>"
+                f"Preis: <b>{fmt(price)}</b>"
+                + (f"\n💬 {comment}" if comment else "")
+                + f"\n<code>{now} UTC</code>"
             )
             alert['active'] = False
             changed = True
