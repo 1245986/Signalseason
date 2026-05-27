@@ -208,7 +208,7 @@
       "coin": "ETH",
       "price": 2050,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "BNB",
