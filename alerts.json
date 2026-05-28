@@ -250,6 +250,13 @@
       "direction": "below",
       "active": true,
       "comment": "kurz vor doppelter Vorteil long"
+    },
+    {
+      "coin": "HYPE",
+      "price": 59,
+      "direction": "above",
+      "active": true,
+      "comment": "kurz vor bearish bc"
     }
   ],
   "trades": [
