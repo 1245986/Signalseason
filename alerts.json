@@ -211,12 +211,6 @@
       "active": false
     },
     {
-      "coin": "LINK",
-      "price": 9.77,
-      "direction": "above",
-      "active": true
-    },
-    {
       "coin": "ONDO",
       "price": 0.3735,
       "direction": "below",
