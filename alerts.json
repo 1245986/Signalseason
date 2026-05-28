@@ -273,6 +273,13 @@
       "direction": "above",
       "active": true,
       "comment": "kurz vor bearish BC"
+    },
+    {
+      "coin": "NEAR",
+      "price": 2.1,
+      "direction": "below",
+      "active": true,
+      "comment": "kurz vor doppelter Vorteil long"
     }
   ],
   "trades": [
