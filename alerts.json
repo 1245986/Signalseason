@@ -252,6 +252,13 @@
       "direction": "below",
       "active": true,
       "comment": "Kurz vor POC"
+    },
+    {
+      "coin": "ONDO",
+      "price": 0.35,
+      "direction": "below",
+      "active": true,
+      "comment": "Vor bullisher TW"
     }
   ],
   "trades": [
