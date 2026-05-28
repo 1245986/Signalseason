@@ -211,12 +211,6 @@
       "active": false
     },
     {
-      "coin": "SUI",
-      "price": 1.1,
-      "direction": "above",
-      "active": true
-    },
-    {
       "coin": "LINK",
       "price": 9.77,
       "direction": "above",
