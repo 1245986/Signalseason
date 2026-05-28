@@ -251,6 +251,13 @@
       "price": 0.2688,
       "direction": "above",
       "active": true
+    },
+    {
+      "coin": "BNB",
+      "price": 628,
+      "direction": "below",
+      "active": true,
+      "comment": "Kurz vor POC"
     }
   ],
   "trades": [
