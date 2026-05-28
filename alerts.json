@@ -244,7 +244,7 @@
       "coin": "ONDO",
       "price": 0.3735,
       "direction": "below",
-      "active": true
+      "active": false
     },
     {
       "coin": "FET",
