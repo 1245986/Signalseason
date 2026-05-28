@@ -1,3 +1,13 @@
 {
-  "alerts": []
+  "alerts": [
+    {
+      "assetId": "gold",
+      "sym": "GC=F",
+      "name": "Gold",
+      "price": 5000,
+      "direction": "above",
+      "active": true,
+      "comment": "Test"
+    }
+  ]
 }
