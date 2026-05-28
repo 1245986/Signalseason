@@ -211,12 +211,6 @@
       "active": false
     },
     {
-      "coin": "SOL",
-      "price": 87.49,
-      "direction": "above",
-      "active": true
-    },
-    {
       "coin": "SUI",
       "price": 1.1,
       "direction": "above",
