@@ -217,12 +217,6 @@
       "active": false
     },
     {
-      "coin": "FET",
-      "price": 0.2688,
-      "direction": "above",
-      "active": true
-    },
-    {
       "coin": "BNB",
       "price": 628,
       "direction": "below",
