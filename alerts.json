@@ -266,6 +266,13 @@
       "direction": "below",
       "active": true,
       "comment": "kurz vor 0559er bullish"
+    },
+    {
+      "coin": "NEAR",
+      "price": 2.5,
+      "direction": "above",
+      "active": true,
+      "comment": "kurz vor bearish BC"
     }
   ],
   "trades": [
