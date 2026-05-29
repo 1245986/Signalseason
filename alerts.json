@@ -241,7 +241,7 @@
       "coin": "NEAR",
       "price": 2.5,
       "direction": "above",
-      "active": true,
+      "active": false,
       "comment": "kurz vor bearish BC"
     },
     {
