@@ -234,7 +234,7 @@
       "coin": "TAO",
       "price": 250,
       "direction": "below",
-      "active": true,
+      "active": false,
       "comment": "kurz vor 0559er bullish"
     },
     {
